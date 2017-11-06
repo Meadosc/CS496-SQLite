@@ -109,7 +109,7 @@ final class DBContract {
         public static final String TABLE_NAME = "demo";
         public static final String COLUMN_NAME_DEMO_STRING = "demo_string";
         public static final String COLUMN_NAME_DEMO_INT = "demo_int";
-        public static final int DB_VERSION = 4;
+        public static final int DB_VERSION = 12;
 
 
         public static final String SQL_CREATE_DEMO_TABLE = "CREATE TABLE " +
