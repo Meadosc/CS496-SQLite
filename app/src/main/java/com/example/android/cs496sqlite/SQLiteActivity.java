@@ -17,6 +17,13 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationListener;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
+
 public class SQLiteActivity extends AppCompatActivity {
     SQLiteExample mSQLiteExample;
     Button mSQLSubmitButton;
@@ -40,7 +47,7 @@ public class SQLiteActivity extends AppCompatActivity {
                 if(mSQLDB != null){
                     ContentValues vals = new ContentValues();
                     vals.put(DBContract.DemoTable.COLUMN_NAME_DEMO_STRING, ((EditText)findViewById(R.id.sql_text_input)).getText().toString());
-                    vals.put(DBContract.DemoTable.COLUMN_NAME_DEMO_LAT, ((EditText)findViewById(R.id.sql_int_input)).getText().toString());
+                    vals.put(DBContract.DemoTable.COLUMN_NAME_DEMO_LAT, "123.02");
                     mSQLDB.insert(DBContract.DemoTable.TABLE_NAME,null,vals);
                     populateTable();
                 } else {
@@ -109,13 +116,13 @@ final class DBContract {
         public static final String TABLE_NAME = "demo";
         public static final String COLUMN_NAME_DEMO_STRING = "demo_string";
         public static final String COLUMN_NAME_DEMO_LAT = "demo_int";
-        public static final int DB_VERSION = 17;
+        public static final int DB_VERSION = 24;
 
 
         public static final String SQL_CREATE_DEMO_TABLE = "CREATE TABLE " +
                 DemoTable.TABLE_NAME + "(" + DemoTable._ID + " INTEGER PRIMARY KEY NOT NULL," +
                 DemoTable.COLUMN_NAME_DEMO_STRING + " VARCHAR(255)," +
-                DemoTable.COLUMN_NAME_DEMO_LAT + " INTEGER);";
+                DemoTable.COLUMN_NAME_DEMO_LAT + " FLOAT);";
 
         public static final String SQL_TEST_DEMO_TABLE_INSERT = "INSERT INTO " + TABLE_NAME +
                 " (" + COLUMN_NAME_DEMO_STRING + "," + COLUMN_NAME_DEMO_LAT + ") VALUES ('test', 123);";

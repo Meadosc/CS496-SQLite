@@ -30,35 +30,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:text="Name"
+                android:text="String"
                 android:ems="10"
                 android:id="@+id/sql_text_input"
                 android:layout_weight="1" />
 
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="40dp">
-
-            <TextView
-                android:text="Integer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView6"
-                android:layout_weight="1"
-                android:textSize="25sp" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:ems="10"
-                android:id="@+id/sql_int_input"
-                android:layout_weight="1" />
-
-        </LinearLayout>
 
         <Button
             android:text="Button"

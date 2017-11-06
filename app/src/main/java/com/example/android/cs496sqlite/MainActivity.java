@@ -51,14 +51,6 @@ public class MainActivity extends AppCompatActivity implements
 
 
 
-
-
-
-
-
-
-
-
         if (mGoogleApiClient == null) {
             mGoogleApiClient = new GoogleApiClient.Builder(this)
                     .addConnectionCallbacks(this)
