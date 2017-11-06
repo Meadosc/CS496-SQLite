@@ -2,6 +2,7 @@ package com.example.android.cs496sqlite;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.support.annotation.NonNull;
@@ -10,6 +11,8 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Button;
+import android.view.View;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
@@ -35,6 +38,27 @@ public class MainActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //SQLite database button click listener and onClick activity opener
+        Button horButton = (Button) findViewById(R.id.SQLite_button);
+        horButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Open activity
+                Intent intent = new Intent(MainActivity.this, SQLiteActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
         if (mGoogleApiClient == null) {
             mGoogleApiClient = new GoogleApiClient.Builder(this)
                     .addConnectionCallbacks(this)
