@@ -76,11 +76,11 @@ public class SQLiteActivity extends AppCompatActivity implements
             @Override
             public void onLocationChanged(Location location) {
                 if (location != null) {
-                    mLonText = "Longitude: " + String.valueOf(location.getLongitude());
-                    mLatText = "  Latitude: " + String.valueOf(location.getLatitude());
+                    mLonText = "  Longitude: " + String.valueOf(location.getLongitude());
+                    mLatText = "Latitude: " + String.valueOf(location.getLatitude());
                 } else {
-                    mLonText = "Longitude: -123.2 ";
-                    mLatText = "  Latitude: 44.5";
+                    mLonText = "  Longitude: -123.2 ";
+                    mLatText = "Latitude: 44.5";
                 }
             }
         };
@@ -126,8 +126,8 @@ public class SQLiteActivity extends AppCompatActivity implements
                 android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
                 ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION}, LOCATION_PERMISSON_RESULT);
-            mLonText = "Longitude: -123.2 ";
-            mLatText = "  Latitude: 44.5";
+            mLonText = "  Longitude: -123.2 ";
+            mLatText = "Latitude: 44.5";
             return;
         }
         updateLocation();
@@ -221,7 +221,7 @@ final class DBContract {
         public static final String TABLE_NAME = "demo";
         public static final String COLUMN_NAME_DEMO_STRING = "demo_string";
         public static final String COLUMN_NAME_DEMO_INT = "demo_int";
-        public static final int DB_VERSION = 31;
+        public static final int DB_VERSION = 32;
 
 
         public static final String SQL_CREATE_DEMO_TABLE = "CREATE TABLE " +
