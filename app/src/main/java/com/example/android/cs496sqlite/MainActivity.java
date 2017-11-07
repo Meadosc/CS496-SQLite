@@ -134,8 +134,7 @@ public class MainActivity extends AppCompatActivity implements
         if(mLastLocation != null){
             mLonText.setText(String.valueOf(mLastLocation.getLongitude()));
             mLatText.setText(String.valueOf(mLastLocation.getLatitude()));
-        } else {
-            LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient,mLocationRequest,mLocationListener);
         }
+        LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient,mLocationRequest,mLocationListener);
     }
 }
